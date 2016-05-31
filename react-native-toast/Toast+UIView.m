@@ -9,7 +9,7 @@
 #import "Toast+UIView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
-
+#import "UIColor+Hex.h"
 /*
  *  CONFIGURE THESE VALUES TO ADJUST LOOK & FEEL,
  *  DISPLAY DURATION, ETC.
@@ -60,6 +60,12 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
 
 @implementation UIView (Toast)
 
+- (UIColor*)makeColor:(NSString*)color {
+    
+    UIColor * aColor = [UIColor colorWithHexString:color];
+    return aColor;
+}
+
 #pragma mark - Toast Methods
 
 - (void)makeToast:(NSString *)message {
@@ -67,22 +73,22 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
 }
 
 - (void)makeToast:(NSString *)message duration:(CGFloat)interval position:(id)position {
-    UIView *toast = [self viewForMessage:message title:nil image:nil];
+    UIView *toast = [self viewForMessage:message title:nil image:nil color:[self makeColor:@"#909090"]];
     [self showToast:toast duration:interval position:position];  
 }
 
-- (void)makeToast:(NSString *)message duration:(CGFloat)interval position:(id)position title:(NSString *)title {
-    UIView *toast = [self viewForMessage:message title:title image:nil];
+- (void)makeToast:(NSString *)message duration:(CGFloat)interval position:(id)position title:(NSString *)title color:(NSString*)color{
+    UIView *toast = [self viewForMessage:message title:title image:nil color:[self makeColor:color]];
     [self showToast:toast duration:interval position:position];  
 }
 
 - (void)makeToast:(NSString *)message duration:(CGFloat)interval position:(id)position image:(UIImage *)image {
-    UIView *toast = [self viewForMessage:message title:nil image:image];
+    UIView *toast = [self viewForMessage:message title:nil image:image color:[self makeColor:@"#909090"]];
     [self showToast:toast duration:interval position:position];  
 }
 
 - (void)makeToast:(NSString *)message duration:(CGFloat)interval  position:(id)position title:(NSString *)title image:(UIImage *)image {
-    UIView *toast = [self viewForMessage:message title:title image:image];
+    UIView *toast = [self viewForMessage:message title:title image:image color:[self makeColor:@"#909090"]];
     [self showToast:toast duration:interval position:position];  
 }
 
@@ -125,13 +131,13 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     
     UIView *activityView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CSToastActivityWidth, CSToastActivityHeight)];
     activityView.center = [self centerPointForPosition:position withToast:activityView];
-    activityView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:CSToastOpacity];
+    activityView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:CSToastOpacity];
     activityView.alpha = 0.0;
     activityView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
     activityView.layer.cornerRadius = CSToastCornerRadius;
     
     if (CSToastDisplayShadow) {
-        activityView.layer.shadowColor = [UIColor blackColor].CGColor;
+        activityView.layer.shadowColor = [UIColor whiteColor].CGColor;
         activityView.layer.shadowOpacity = CSToastShadowOpacity;
         activityView.layer.shadowRadius = CSToastShadowRadius;
         activityView.layer.shadowOffset = CSToastShadowOffset;
@@ -190,7 +196,7 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     return [self centerPointForPosition:CSToastDefaultPosition withToast:toast];
 }
 
-- (UIView *)viewForMessage:(NSString *)message title:(NSString *)title image:(UIImage *)image {
+- (UIView *)viewForMessage:(NSString *)message title:(NSString *)title image:(UIImage *)image color:(UIColor*)color{
     // sanity
     if((message == nil) && (title == nil) && (image == nil)) return nil;
 
@@ -205,13 +211,13 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     wrapperView.layer.cornerRadius = CSToastCornerRadius;
     
     if (CSToastDisplayShadow) {
-        wrapperView.layer.shadowColor = [UIColor blackColor].CGColor;
+        wrapperView.layer.shadowColor = color.CGColor;
         wrapperView.layer.shadowOpacity = CSToastShadowOpacity;
         wrapperView.layer.shadowRadius = CSToastShadowRadius;
         wrapperView.layer.shadowOffset = CSToastShadowOffset;
     }
 
-    wrapperView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:CSToastOpacity];
+    wrapperView.backgroundColor = [color colorWithAlphaComponent:CSToastOpacity];
     
     if(image != nil) {
         imageView = [[UIImageView alloc] initWithImage:image];
@@ -234,7 +240,7 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
         titleLabel = [[UILabel alloc] init];
         titleLabel.numberOfLines = CSToastMaxTitleLines;
         titleLabel.font = [UIFont boldSystemFontOfSize:CSToastFontSize];
-        titleLabel.textAlignment = NSTextAlignmentLeft;
+        titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.textColor = [UIColor whiteColor];
         titleLabel.backgroundColor = [UIColor clearColor];
@@ -299,6 +305,7 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     
     if(titleLabel != nil) {
         titleLabel.frame = CGRectMake(titleLeft, titleTop, titleWidth, titleHeight);
+        titleLabel.center = CGPointMake(wrapperWidth/2.0, titleLabel.center.y);
         [wrapperView addSubview:titleLabel];
     }
     

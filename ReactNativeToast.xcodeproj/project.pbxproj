@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57E32BDF1CFDC2780038C538 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E32BDE1CFDC2780038C538 /* UIColor+Hex.m */; };
 		91B849741B3D3DA7000C8B92 /* libReactNativeToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B849681B3D3DA7000C8B92 /* libReactNativeToast.a */; };
 		91C3D0ED1B3D466000734765 /* SKToastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3D0EA1B3D466000734765 /* SKToastManager.m */; };
 		91C3D0EE1B3D466000734765 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3D0EC1B3D466000734765 /* Toast+UIView.m */; };
@@ -35,6 +36,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		57E32BDD1CFDC2450038C538 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		57E32BDE1CFDC2780038C538 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		91B849681B3D3DA7000C8B92 /* libReactNativeToast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeToast.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B849731B3D3DA7000C8B92 /* ReactNativeToastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeToastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B849791B3D3DA7000C8B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				91C3D0EA1B3D466000734765 /* SKToastManager.m */,
 				91C3D0EB1B3D466000734765 /* Toast+UIView.h */,
 				91C3D0EC1B3D466000734765 /* Toast+UIView.m */,
+				57E32BDD1CFDC2450038C538 /* UIColor+Hex.h */,
+				57E32BDE1CFDC2780038C538 /* UIColor+Hex.m */,
 			);
 			path = "react-native-toast";
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91C3D0EE1B3D466000734765 /* Toast+UIView.m in Sources */,
+				57E32BDF1CFDC2780038C538 /* UIColor+Hex.m in Sources */,
 				91C3D0ED1B3D466000734765 /* SKToastManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

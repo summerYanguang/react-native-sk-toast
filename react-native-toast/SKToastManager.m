@@ -15,11 +15,11 @@
 // 暴露模块
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(show:(NSString *)message duration:(CGFloat)interval position:(NSString *)position)
+RCT_EXPORT_METHOD(show:(NSString *)message duration:(CGFloat)interval position:(NSString *)position title:(NSString *)title color:(NSString*)color )
 {
     // Execute ui change in main thread
     dispatch_async(dispatch_get_main_queue(), ^{
-       [[UIApplication sharedApplication].keyWindow makeToast:message duration:interval position:position ];
+        [[UIApplication sharedApplication].keyWindow makeToast:message duration:interval position:position title:title color:color];
     });
 }
 

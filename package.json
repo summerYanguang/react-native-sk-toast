@@ -1,23 +1,90 @@
 {
-  "name": "react-native-sk-toast",
-  "version": "1.0.2",
+  "_args": [
+    [
+      {
+        "name": "react-native-sk-toast",
+        "raw": "react-native-sk-toast@^1.0.3",
+        "rawSpec": "^1.0.3",
+        "scope": null,
+        "spec": ">=1.0.3 <2.0.0",
+        "type": "range"
+      },
+      "/Users/yyt/Desktop/xinfenqi/app"
+    ]
+  ],
+  "_cnpm_publish_time": 1457935372594,
+  "_from": "react-native-sk-toast@>=1.0.3 <2.0.0",
+  "_id": "react-native-sk-toast@1.0.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-native-sk-toast",
+  "_nodeVersion": "4.1.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/react-native-sk-toast-1.0.3.tgz_1457935372004_0.05812155734747648"
+  },
+  "_npmUser": {
+    "email": "772910474@qq.com",
+    "name": "shigebeyond"
+  },
+  "_npmVersion": "2.14.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "react-native-sk-toast",
+    "raw": "react-native-sk-toast@^1.0.3",
+    "rawSpec": "^1.0.3",
+    "scope": null,
+    "spec": ">=1.0.3 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/react-native-sk-toast/download/react-native-sk-toast-1.0.3.tgz",
+  "_shasum": "8e9c3290cb653cd39e70ead28ce38b68c537ee2a",
+  "_shrinkwrap": null,
+  "_spec": "react-native-sk-toast@^1.0.3",
+  "_where": "/Users/yyt/Desktop/xinfenqi/app",
+  "author": {
+    "name": "shigebeyond"
+  },
+  "bugs": {
+    "url": "https://github.com/shigebeyond/react-native-sk-toast/issues"
+  },
+  "dependencies": {},
   "description": "A toast api in IOS, just like ToastAndroid in android",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "noattachment": false,
+    "shasum": "8e9c3290cb653cd39e70ead28ce38b68c537ee2a",
+    "size": 167210,
+    "tarball": "http://registry.npm.taobao.org/react-native-sk-toast/download/react-native-sk-toast-1.0.3.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shigebeyond/react-native-sk-toast.git"
-  },
+  "gitHead": "de4088fb52f50f9501ae4dd5fbf9745cdbcc1a60",
+  "homepage": "https://github.com/shigebeyond/react-native-sk-toast#readme",
   "keywords": [
     "react-native",
     "toast"
   ],
-  "author": "shigebeyond",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shigebeyond/react-native-sk-toast/issues"
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "772910474@qq.com",
+      "name": "shigebeyond"
+    }
+  ],
+  "name": "react-native-sk-toast",
+  "optionalDependencies": {},
+  "publish_time": 1457935372594,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/summerYanguang/react-native-sk-toast.git"
   },
-  "homepage": "https://github.com/shigebeyond/react-native-sk-toast#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.3"
 }
