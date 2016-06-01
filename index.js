@@ -11,7 +11,7 @@ var ToastIOS = NativeModules.SKToastManager,
 
 var delegate = {};
 ['top', 'center', 'bottom'].map((pos) => {
-  delegate[pos] = function(title ,message, duration=1.0, color='#909090'){
+  delegate[pos] = function(message, title, duration=1.0, color='#909090'){
     if(Platform.OS === 'ios'){ // ios: show(String message, int duration, String position), 其中position为 top/center/bottom
       ToastIOS.show(message, duration, pos, title, color);
     }else{ // android: show(String message, int type)，其中type为 ToastAndroid.SHORT / ToastAndroid.LONG
